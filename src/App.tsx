@@ -57,7 +57,7 @@ export default function AIHumanImageQuiz() {
             return (
               <div key={index} className={`result-item ${noAnswer ? 'neutral' : correct ? 'correct' : 'incorrect'}`}>
                 <img
-                  src={`/images/${IMAGES[index].name}.${IMAGES[index].ext}`}
+                  src={`images/${IMAGES[index].name}.${IMAGES[index].ext}`}
                   alt={`${IMAGES[index].name}`}
                   className="result-image"
                 />
@@ -79,7 +79,7 @@ export default function AIHumanImageQuiz() {
       <h2>Is this image AI or Human created?</h2>
       <h3>{IMAGES[currentImage].name}</h3>
       <img
-        src={`/images/${IMAGES[currentImage].name}.${IMAGES[currentImage].ext}`}
+        src={`images/${IMAGES[currentImage].name}.${IMAGES[currentImage].ext}`}
         alt={`Image ${currentImage + 1}`}
         className="quiz-image"
       />
