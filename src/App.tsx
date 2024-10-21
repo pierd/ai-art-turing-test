@@ -58,11 +58,11 @@ export default function AIHumanImageQuiz() {
               <div key={index} className={`result-item ${noAnswer ? 'neutral' : correct ? 'correct' : 'incorrect'}`}>
                 <img
                   src={`images/${IMAGES[index].name}.${IMAGES[index].ext}`}
-                  alt={`${IMAGES[index].name}`}
+                  alt={IMAGES[index].name}
                   className="result-image"
                 />
                 <div className="result-details">
-                  <p>{IMAGES[index].name}</p>
+                  <p>{`${IMAGES[index].name} (${index + 1}/${IMAGES.length})`}</p>
                   <p>Correct: {IMAGES[index].answer}</p>
                   <p>Your answer: {answerOptions.find(option => option.value === answer.value)!.label}</p>
                 </div>
@@ -77,10 +77,10 @@ export default function AIHumanImageQuiz() {
   return (
     <div className="quiz-container">
       <h2>Is this image AI or Human created?</h2>
-      <h3>{IMAGES[currentImage].name}</h3>
+      <h3>{`${IMAGES[currentImage].name} (${currentImage + 1}/${IMAGES.length})`}</h3>
       <img
         src={`images/${IMAGES[currentImage].name}.${IMAGES[currentImage].ext}`}
-        alt={`Image ${currentImage + 1}`}
+        alt={IMAGES[currentImage].name}
         className="quiz-image"
       />
       <div className="answer-buttons">
